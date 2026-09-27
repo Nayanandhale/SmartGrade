@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartGrade — Intelligent Stainless Steel Grade Recommendation</title>
+  <meta name="description" content="SmartGrade translates application requirements into deterministic grade recommendations for stainless steel, with source traceability and procurement support.">
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="css/smartgrade.css">
+
+  <!-- Leaflet for map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    /* Extra inline: prevent flash of unstyled content */
+    #app:empty::before { content:'Loading SmartGrade…'; display:flex; align-items:center; justify-content:center; height:100vh; font-family:'Inter',sans-serif; font-weight:700; color:#0B2545; font-size:1.5rem; }
+    /* Leaflet custom popup */
+    .leaflet-popup-content-wrapper { border-radius:8px; box-shadow:0 8px 24px rgba(11,37,69,.18); }
+    .leaflet-popup-content { font-family:'Inter',sans-serif; font-size:0.82rem; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Data layer -->
+  <script src="js/data/grades.js"></script>
+  <script src="js/data/properties.js"></script>
+  <script src="js/data/applications.js"></script>
+  <script src="js/data/dataset.js"></script>
+
+  <!-- Engine -->
+  <script src="js/engine.js"></script>
+
+  <!-- Views -->
+  <script src="js/views1.js"></script>
+  <script src="js/views2.js"></script>
+
+  <!-- Chat panel (renderChatPanel helper) -->
+  <script>
+  SGViews.renderChatPanel = function() {
+    return `
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div class="chat-header-info">
+        <div class="chat-header-name">SmartGrade Assistant</div>
+        <div class="chat-header-status">RAG · Source-traced · Prototype</div>
+      </div>
+      <button onclick="SGApp.toggleChat()" style="background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer;padding:0.25rem" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-footer">
+      <input class="chat-input" id="chat-input" placeholder="Ask about grades, properties, or your results…" onkeydown="if(event.key==='Enter')SGApp.sendChat()" aria-label="Chat input">
+      <button class="btn btn-navy btn-sm" onclick="SGApp.sendChat()">Send</button>
+    </div>`;
+  };
+  </script>
+
+  <!-- App controller -->
+  <script src="js/app.js"></script>
+</body>
+</html>
