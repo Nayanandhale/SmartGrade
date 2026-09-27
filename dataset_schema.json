@@ -1,0 +1,112 @@
+{
+  "grades": [
+    "grade_id",
+    "name",
+    "family",
+    "UNS",
+    "EN",
+    "product_forms"
+  ],
+  "properties": [
+    "grade_id",
+    "property",
+    "min",
+    "max",
+    "unit",
+    "condition",
+    "standard",
+    "source_id"
+  ],
+  "corrosion": [
+    "grade_id",
+    "metric",
+    "value",
+    "unit",
+    "test_method",
+    "environment",
+    "source_id"
+  ],
+  "fabrication": [
+    "grade_id",
+    "weldability",
+    "formability",
+    "workability",
+    "heat_treatment",
+    "source_id"
+  ],
+  "applications": [
+    "application_id",
+    "industry",
+    "component",
+    "environment",
+    "temp_range",
+    "required_properties"
+  ],
+  "grade_applications": [
+    "grade_id",
+    "application_id",
+    "evidence_type",
+    "source_id"
+  ],
+  "cost_bands": [
+    "scope",
+    "grade/family",
+    "form",
+    "band",
+    "source_date",
+    "source_type"
+  ],
+  "sustainability": [
+    "grade",
+    "site",
+    "pcf_assessment",
+    "boundary",
+    "methodology",
+    "assessment_period",
+    "source_id"
+  ],
+  "locations": [
+    "id",
+    "city",
+    "state",
+    "type",
+    "address",
+    "phone",
+    "email",
+    "lat",
+    "lon",
+    "verification_status"
+  ],
+  "sources": [
+    "source_id",
+    "title",
+    "publisher",
+    "URL/file",
+    "page",
+    "section",
+    "date"
+  ],
+  "projects": [
+    "id",
+    "user_id",
+    "name",
+    "input_text",
+    "requirement_json",
+    "version"
+  ],
+  "recommendations": [
+    "project_id",
+    "grade_id",
+    "status",
+    "score",
+    "reasons",
+    "tradeoffs",
+    "source_ids"
+  ],
+  "chat_messages": [
+    "project_id/user_id",
+    "question",
+    "retrieved_sources",
+    "answer"
+  ]
+}
